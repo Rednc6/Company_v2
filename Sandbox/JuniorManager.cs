@@ -11,7 +11,7 @@ namespace Sandbox
         int _bonus;
         int _hoursWorked;
 
-        bool _BonusPaid;
+       
 
         public JuniorManager(string name, int baseSalary, int hoursWorked ,int bonus) : base(name)
         {
@@ -32,14 +32,14 @@ namespace Sandbox
             if (_hoursWorked >= 180)
             {
                 return _baseSalary + _bonus;
-                _BonusPaid = true;
+                
             }
             return _baseSalary;
         }
 
         public override bool IsBonusPaidOut()
         {
-            if (_BonusPaid == true)
+            if (_hoursWorked >= 180)
             {
                 return true;
             }

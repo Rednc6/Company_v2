@@ -12,7 +12,7 @@ namespace Sandbox
         int _hoursWorked;
         int _performanceLevel;
 
-        bool _BonusPaid;
+        
 
 
         public SeniorManager(string name, int baseSalary, int hoursWorked, int bonus, int performanceLevel) : base(name)
@@ -26,17 +26,26 @@ namespace Sandbox
 
         public override int GetBonusPerMonth()
         {
+      
             return _bonus;
         }
 
         public override int GetSalaryPerMonth()
         {
+            if (_performanceLevel >= 6)
+            {
+                return _baseSalary + _bonus;
+            }
             return _baseSalary;
         }
 
         public override bool IsBonusPaidOut()
         {
-            throw new NotImplementedException();
+            if (_performanceLevel >= 6)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

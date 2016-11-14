@@ -5,25 +5,27 @@ using System.Text;
 
 namespace Sandbox
 {
-    abstract class Manager 
+    abstract class Manager : Employee
     {
 
-        private String name;
-
-        public Manager(String name)
+        public Manager(string name) : base(name)
         {
-            this.name = name;
+
         }
 
-        public String GetName()
+        public override int GetBonusPerMonth()
         {
-            return name;
+            throw new NotImplementedException();
         }
 
-        public abstract int GetSalaryPerMonth();
+        public override int GetSalaryPerMonth()
+        {
+            throw new NotImplementedException();
+        }
 
-        public abstract int GetBonusPerMonth();
-
-        public abstract bool IsBonusPaidOut();
+        public override bool IsBonusPaidOut()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
